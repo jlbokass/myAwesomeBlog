@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create comment{% endblock %}
+
+{% block body %}
+
+    {# Jumbotron #}
+    <div class="p-5 mb-4 bg-warning">
+        <div class="container-fluid py-5 text-center">
+            <h1 class="display-5 fw-bold">Add comment to {{ article.title }}</h1>
+        </div>
+    </div>
+
+    <div class="col-md-9 mx-auto my-5">
+        <div class="container-md">
+            {{ form_start(form) }}
+            {{ form_widget(form.content) }}
+            <button type="submit" class="btn btn-warning mt-3">Add comment</button>
+            <a href="{{ path('app_article_show', {id: article.id}) }}" class="btn btn-success mt-3">Back to article</a>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
